@@ -6,9 +6,10 @@ class Filter
 	/**
 	 *  @param	string	$string		String to filter before putting inside InnoDB
 	 *  @return            			Filters and returns a valid string to put into the Database.
+	 *  @note				If the $html arg is false, new lines (\n) will replaced with __BR__ and re-converted to \r\n afterwards.
+	 * 					.. This is to ensure new lines are kept in place.
 	 */
 	public static function String( $string, $html = false ) {
-		
 		if(!$html) {
 			$string = preg_replace("/(\n)/", "__BR__", $string);
 			$string = filter_var( $string , FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
@@ -41,7 +42,6 @@ class Filter
 	 *  @return	int					Returns an integer after being filtered. 
 	 */
 	public static function Int( $integer ) {
-		
 		return (int) $integer = filter_var( $integer , FILTER_SANITIZE_NUMBER_INT);
 	}
 

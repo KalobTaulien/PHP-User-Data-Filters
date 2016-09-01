@@ -14,7 +14,7 @@ This is a pretty straight forward PHP class. It's meant to be an additional filt
 ?>
 ```
 
-## Supports
+## Support
 This class supports the following (so far)
 - `Filter::Email( $email );`
 - `Filter::String( $string, $encode_html_or_not );`
